@@ -1,0 +1,365 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application BUT this cause problem to mobile layout if you give max-width in pixel. So better comment it.
+  */
+  html, body {
+    /* height: 100%;  */
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+/* Custom Properties */
+:root{
+    --clr-strong-cyan :  hsl(171, 66%, 44%);
+    --clr-light-blue : hsl(233, 100%, 69%);
+    
+    /* neutral */
+    --clr-dark-grayish-blue : hsl(210, 10%, 33%);
+    --clr-grayish-blue :  hsl(224, 23%, 55%);
+    --clr-light-grayish-blue :  hsl(210, 1%, 95%);
+
+    /* Font size */
+    --fs: 1.125rem;
+
+    /* Font family */
+    --ff-accesnt: 'Bai Jamjuree', sans-serif;
+}
+
+/* General Styling */
+body{
+  font-family:var(--ff-accesnt);
+  font-size: var(--fs);
+  background-color: var(--clr-very-pale-blue);
+  display: grid;
+  place-content: center;
+}
+
+/* Utility class */
+
+.flex-item{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    place-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon{
+    display: flex;
+    flex-direction: row;
+}
+
+.logo_footer{
+    max-width: 55px;
+}
+
+main{
+    max-width: 375px;
+}
+
+.clipboard__header{
+    background-image: url(./images/bg-header-mobile.png);
+    background-repeat: no-repeat;
+    padding: 1rem;
+}
+
+.clipboard__logo{
+    display: grid;
+    place-content: center;
+    padding: 5rem 0 3rem 0;
+}
+
+.clipboard__heading{
+    text-align: center;
+    line-height: 1.2;
+    color: var(--clr-dark-grayish-blue);
+    font-size: 2rem;
+    padding: 1rem 0 1rem 0;
+}
+
+.clipboard__description{
+    text-align: center;
+    color: var(--clr-grayish-blue);
+    font-size: 1rem;
+    padding: 0 0.8rem 1rem 0.8rem;
+}
+
+.download__button{
+    margin: 0 1rem;
+    padding: 1rem;
+}
+
+.download__button-ios{
+    padding: 1rem;
+    border: 0;
+    border-radius: 2rem;
+    background-color: var(--clr-strong-cyan);
+    color: white;
+    font-weight: 700;
+    /* box-shadow: inset 1px 0 5px 6px var(--clr-strong-cyan); */
+}
+
+.download__button-mac{
+    padding: 1rem;
+    border: 0;
+    border-radius: 2rem;
+    background-color: var(--clr-light-blue);
+    color: white;
+    font-weight: 700;
+    /* box-shadow: inset 1px 0 5px 6px var(--clr-strong-cyan); */
+}
+
+.clipboard__feature{
+    padding: 4rem 2rem;
+}
+
+.feature__title{
+    padding: 1rem;
+    text-align: center;
+    color: var(--clr-dark-grayish-blue);
+}
+
+.feature__description{
+    /* padding: 0.5rem; */
+    text-align: center;
+    color: var(--clr-grayish-blue);
+    font-size: 1rem;
+}
+
+.computer-image{
+    padding: 5rem 0 3rem;
+
+}
+
+.quick__search-title,
+.icloud__sync-title,
+.complete__history-title,
+.access__anywhere-title{
+    text-align: center;
+    font-size: 1.75rem;
+    color: var(--clr-dark-grayish-blue);
+}
+
+.quick__search-description,
+.icloud__sync-description,
+.complete__history-description,
+.access__anywhere-description,
+.supercharge__description,
+.blacklist__description,
+.snippet__description,
+.sneak__description,
+.supported__device-description{
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--clr-grayish-blue);
+    padding-bottom: 3rem;
+}
+
+.acces__anywhere,
+.supported__device{
+    text-align: center;
+    padding: 1rem;
+}
+
+.access__anywhere-title{
+    padding: 1rem;
+}
+
+.device__image{
+    padding: 1rem;
+}
+
+.supercharge__title{
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--clr-dark-grayish-blue);
+}
+
+.workflow__icon{
+    text-align: center;
+    padding: 2rem;
+}
+
+.supercharge__icon{
+    display: grid;
+    justify-content: center;
+}
+
+.blacklist__title,
+.snippet__title,
+.sneak__title,
+.supported__device-title{
+    text-align: center;
+    font-size: 2rem;
+    color: var(--clr-dark-grayish-blue);
+    margin: 2rem 0rem 1rem 0rem;
+}
+
+.google,
+.ibm,
+.microsoft,
+.hp,
+.vector-graphics{
+    padding: 2rem;
+}
+
+footer{
+    margin-top: 10rem;
+    padding: 3rem;
+    background-color: var(--clr-light-grayish-blue);
+    color: var(--clr-grayish-blue);
+}
+
+.logo_footer{
+    margin-bottom: 2rem;
+}
+
+.footer-col{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.faq:hover,
+.contact-us:hover,
+.privacy-policy:hover,
+.press-kit:hover,
+.install-guide:hover
+{
+        cursor: pointer;
+        color: var(--clr-strong-cyan);
+}
+
+.Social-SVG{
+        fill: var(--clr-dark-grayish-blue)
+}
+
+.Social-SVG:hover{
+    cursor: pointer;
+    fill: var(--clr-strong-cyan)
+}
+
+@media (min-width:50rem) {
+    main{
+        max-width: 1440px;
+
+    }
+
+    .clipboard__header{
+        background-image: url(./images/bg-header-desktop.png);
+        background-repeat: no-repeat;
+        padding: 1rem;
+    }
+    .flex-item{
+        flex-direction: row;
+    }
+
+    .clipboard__heading{
+        font-size: 3rem;
+    }
+
+    .clipboard__description{
+        text-align: center;
+        font-size: 1.25rem;
+        padding: 1rem;
+        margin: 0 18rem;
+    }
+
+    .feature__title{
+        font-size: 2rem;
+    }
+    
+    .feature__description{
+        font-size: 1.25rem;
+        margin: 0 18rem;
+    }
+    
+    .computer-image{
+        margin-left: -12%
+    }
+
+    .quick__search-description,
+    .icloud__sync-description,
+    .complete__history-description{
+        margin: 0 10rem;
+        text-align: left;
+        max-width: 23rem;
+    }
+    .access__anywhere-description,
+    .supported__device-description{
+        margin: 0 22rem;
+
+    }
+    .device__image{
+        display: grid;
+        place-content: center;
+    }
+
+    footer.flex-item{
+        justify-content: space-evenly;
+    }
+
+    .social-icon{
+        margin-left: 7rem;
+    }
+
+    .footer-col{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .install-guide{
+        margin-bottom: 2rem;
+    }
+
+    .logo_footer>img{
+        margin-top: 1.5rem;
+    }
+
+    .logo_footer>p{
+        margin-bottom: 12rem;
+    }
+
+}
